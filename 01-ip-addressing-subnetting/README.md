@@ -13,6 +13,41 @@ Practice IPv4 addressing and subnetting to design and troubleshoot IP networks.
 ## Status
 In progress.
 
+## Project 1: IPv4 Subnetting
+
+### Problem
+Determine the subnet details for the host address `192.168.10.75/27`.
+
+### Given
+- IP address: `192.168.10.75`
+- CIDR prefix: `/27`
+
+### Solution
+| Property | Result |
+|---|---|
+| Subnet mask | `255.255.255.224` |
+| Network address | `192.168.10.64` |
+| Broadcast address | `192.168.10.95` |
+| First usable address | `192.168.10.65` |
+| Last usable address | `192.168.10.94` |
+| Host bits | `32 - 27 = 5` |
+| Total addresses | `2^5 = 32` |
+| Usable host addresses | `32 - 2 = 30` |
+
+### Method
+1. A `/27` prefix leaves 5 bits for hosts.
+2. The subnet mask is `255.255.255.224`.
+3. The block size is `256 - 224 = 32`.
+4. The address `192.168.10.75` falls in the block from `192.168.10.64` to `192.168.10.95`.
+5. The first and last addresses are reserved for the network and broadcast, leaving 30 usable host addresses.
+
+### Verification
+The host address `192.168.10.75` is within the usable range `192.168.10.65–192.168.10.94`.
+
+### Skills demonstrated
+- IPv4 subnetting and CIDR notation
+- Subnet mask and block-size calculations
+- Identifying network, broadcast, and usable host addresses
 
 ## Project 2: VLSM Subnetting for an Office Network
 
